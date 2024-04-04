@@ -7,9 +7,6 @@ body {
   margin: 0;
 }
 
-main {
-  padding: 36px;
-}
 
 .header {
   display: flex;
@@ -20,10 +17,6 @@ main {
   padding: 20px;
 }
 
-.header--image {
-  height: 100%;
-  margin-right: 6px;
-}
 
 .header--title {
   font-size: 1.25rem;
@@ -35,60 +28,22 @@ main {
   font-weight: 500;
 }
 
-.form {
-  display: grid;
-  grid-template: 40px 40px / 1fr 1fr;
-  gap: 17px;
-  margin-bottom: 17px;
-}
-
-.form--input {
-  font-family: "Karla", sans-serif;
-  border-radius: 5px;
-  border: 1px solid #D5D4D8;
-  text-indent: 5px;
-}
-
-
-
-.meme {
-  position: relative;
-}
-
-.meme--image {
+.recipe-cards-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  justify-content: center; /* Align cards in the center horizontally */
+  gap: 20px; /* Add space between cards */
+  padding: 20px; /* Add padding to the container */
   max-width: 100%;
-  border-radius: 3px;
 }
 
-.meme--text {
-  position: absolute;
-  width: 80%;
-  text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 15px 0;
-  padding: 0 5px;
-  font-family: impact, sans-serif;
-  font-size: 2em;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 1px;
-  text-shadow:
-      2px 2px 0 #000,
-      -2px -2px 0 #000,
-      2px -2px 0 #000,
-      -2px 2px 0 #000,
-      0 2px 0 #000,
-      2px 0 0 #000,
-      0 -2px 0 #000,
-      -2px 0 0 #000,
-      2px 2px 5px #000;
+.recipe-card {
+  max-width: 300px; /* Example max-width for recipe cards */
+  width: 100%; /* Ensure each card takes up the full width of its container */
+  text-align: center; /* Center the content horizontally */
 }
 
-.bottom {
-  bottom: 0;
-}
-
-.top {
-  top: 0;
+.recipe-card img {
+  max-width: 100%; /* Ensure the image does not exceed its parent's width */
+  height: auto; /* Allow the image to adjust its height based on its aspect ratio */
 }

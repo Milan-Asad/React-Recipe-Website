@@ -22,7 +22,7 @@ export default function App() {
     return (
         <div>
             <Header />
-            <div className="recipe-cards">
+            <div className="recipe-cards-wrapper">
                 {recipes.map(recipe => (
                     <div key={recipe.id} className="recipe-card">
                         <img src={recipe.image} alt={recipe.title} />
