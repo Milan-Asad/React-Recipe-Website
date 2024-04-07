@@ -29,21 +29,52 @@ body {
 }
 
 .recipe-cards-wrapper {
-  display: flex;
-  flex-wrap: wrap; /* Allow cards to wrap to the next line */
-  justify-content: center; /* Align cards in the center horizontally */
-  gap: 20px; /* Add space between cards */
-  padding: 20px; /* Add padding to the container */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+  gap: 20px;
+  padding: 20px; 
   max-width: 100%;
 }
 
 .recipe-card {
-  max-width: 300px; /* Example max-width for recipe cards */
-  width: 100%; /* Ensure each card takes up the full width of its container */
-  text-align: center; /* Center the content horizontally */
+  text-align: center;
+  border: 2px solid #000000; 
+  padding-bottom: 15px; 
+  border-radius: 8px; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%; /* Add this line */
+  max-width: 560px; /* Adjust the maximum width as needed */
+
 }
 
 .recipe-card img {
-  max-width: 100%; /* Ensure the image does not exceed its parent's width */
-  height: auto; /* Allow the image to adjust its height based on its aspect ratio */
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover img {
+  transform: scale(1.03); 
+}
+
+
+.recipe-card img {
+  max-width: 100%; 
+  height: auto; 
+}
+
+
+
+/* MEDIA SCREENS */
+@media (min-width: 25px) and (max-width: 1024px) {
+  .recipe-cards-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted column sizes for screens between 425px and 768px */
+  }
+}
+
+@media (min-width: 769px) {
+  .recipe-cards-wrapper {
+    padding: 50px; /* Increased padding for larger screens */
+  }
 }

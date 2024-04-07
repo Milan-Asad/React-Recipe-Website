@@ -1,10 +1,22 @@
 /* 
+FIRSTLY REMEMBER TO USE "NPM START" TO RUN APP
+
 
 LINK: 
 https://api.spoonacular.com/recipes/random?apiKey=c54ba6b8202141d69cd028ce39a0e087&number=5
 
 API KEY: 
 c54ba6b8202141d69cd028ce39a0e087
+
+.recipe-cards-wrapper {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+  gap: 20px; 
+  padding-top: 50px;  
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-bottom: 100px;
+  max-width: 100%;
+}
 
 */
 

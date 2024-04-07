@@ -6,8 +6,8 @@ import '../style.css';
 export default function Header() {
     return (
         <header className="header">
-            <h2 className="header--title">THE GRILL HUB</h2>
-            <h3 className="header--project">Gourmet Dishes cooked to perfection</h3>
+            <h2 className="header--title">THE RECIPE HUB</h2>
+            <h3 className="header--project">Daily recipes for you to choose from</h3>
         </header>
     );
 }
