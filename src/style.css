@@ -37,22 +37,45 @@ body {
 }
 
 .recipe-card {
-  text-align: center;
-  border: 2px solid #000000; 
-  padding-bottom: 15px; 
-  border-radius: 8px; 
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Set position relative to enable absolute positioning */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 1);
   overflow: hidden;
-  width: 100%; /* Add this line */
-  max-width: 560px; /* Adjust the maximum width as needed */
-
+  height: 250px;
+  border-radius: 5px;
+  
 }
+
 
 .recipe-card img {
-  max-width: 100%;
-  height: auto;
+  width: 100%; 
+  height: auto; 
   transition: transform 0.3s ease;
 }
+
+  .recipe-card h3 {
+    position: absolute; /* Set position absolute */
+    bottom: 0; /* Move the title and shadow to the bottom */
+    left: 0; /* Adjust left position to overlay the title */
+    color: white; /* Set text color */
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Gradient fade background from bottom to top */
+    padding-bottom: 35px; /* Add padding for better readability */
+    border-radius: 0px; /* Add border radius for better appearance */
+    margin: 0; /* Remove default margin */
+    margin-bottom: -20px;
+    width: 100%; /* Calculate width to fit within the card */
+    z-index: 1; /* Set z-index to ensure the title is displayed above the image */
+    text-align: center;
+    text-transform: uppercase; /* Make the text uppercase */
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+  }
+
+
+
+
+
 
 .recipe-card:hover img {
   transform: scale(1.03); 
@@ -66,15 +89,48 @@ body {
 
 
 
-/* MEDIA SCREENS */
-@media (min-width: 25px) and (max-width: 1024px) {
+/* MEDIA SCREENS OROGINAL WAS 769 */
+@media (min-width: 25px) and (max-width: 769px) {
+
   .recipe-cards-wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted column sizes for screens between 425px and 768px */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   }
+
+  .recipe-card {
+    position: relative; /* Set position relative to enable absolute positioning */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 1);
+    overflow: hidden;
+    height: 150px;
+    border-radius: 5px;
+    
+  }
+
+  .recipe-card h3 {
+    font-size: 13px;
+  }
+  
+  
 }
 
-@media (min-width: 769px) {
+
+
+@media (min-width: 770px)  {
+
   .recipe-cards-wrapper {
-    padding: 50px; /* Increased padding for larger screens */
+    padding: 50px; 
+    margin-left: 50px;
+    margin-right: 50px;
   }
+
+
+  /* 
+  .recipe-cards-wrapper {
+    padding: 50px; 
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  */
+
+  
+
 }
