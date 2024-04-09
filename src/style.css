@@ -72,11 +72,6 @@ body {
 
   }
 
-
-
-
-
-
 .recipe-card:hover img {
   transform: scale(1.03); 
 }
@@ -86,6 +81,25 @@ body {
   max-width: 100%; 
   height: auto; 
 }
+
+
+
+
+/* SEARCH BAR */
+.search-bar {
+  display: flex;
+  margin-bottom: 0px;
+  height: 30px;
+  width: 87%;
+  max-width: 100%;
+  margin-left: 6.5%;
+  margin-top: 20px;
+  border-radius: 10px; /* Add border-radius for curved edges */
+  background-color: #d5d5d5; /* Set light grey background color */
+  border: none; /* Remove border */
+  padding-left: 20px;
+}
+
 
 
 
