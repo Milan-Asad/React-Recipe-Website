@@ -28,12 +28,30 @@ body {
   font-weight: 500;
 }
 
+.daily-picks-text {
+  font-family: 'Ginerin-Regular', sans-serif;
+  text-transform: uppercase;
+  font-size: 25px;
+  padding-left: 140px;
+  padding-top: 50px;
+}
+
+
+
+
+
 .recipe-cards-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
   gap: 20px;
   padding: 20px; 
   max-width: 100%;
+
+  /* PADDING */
+  padding-left: 130px;
+  padding-right: 130px;
+
+  padding-top: 20px;
 }
 
 .recipe-card {
@@ -83,6 +101,12 @@ body {
 }
 
 
+/* FONTS */
+@font-face {
+  font-family: 'Ginerin-Regular';
+  src: url('./fonts/Ginerin-Regular.otf') format('opentype');
+}
+
 
 
 /* SEARCH BAR */
@@ -90,24 +114,25 @@ body {
   display: flex;
   margin-bottom: 0px;
   height: 30px;
-  width: 87%;
+  width: 57%;
   max-width: 100%;
-  margin-left: 6.5%;
+  margin-left: 20%;
   margin-top: 20px;
-  border-radius: 10px; /* Add border-radius for curved edges */
-  background-color: #d5d5d5; /* Set light grey background color */
-  border: none; /* Remove border */
+  border-radius: 5px; 
+  background-color: #d5d5d5; 
+  border: none; 
   padding-left: 20px;
 }
 
 
 
 
-/* MEDIA SCREENS OROGINAL WAS 769 */
-@media (min-width: 25px) and (max-width: 769px) {
+/* MEDIA SCREENS OROGINAL WAS 769, 1069 */
+@media (min-width: 25px) and (max-width: 1069) {
 
   .recipe-cards-wrapper {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    
   }
 
   .recipe-card {
@@ -124,17 +149,20 @@ body {
   }
   
   
+
+  
 }
 
 
 
 @media (min-width: 770px)  {
 
-  .recipe-cards-wrapper {
+  /* .recipe-cards-wrapper {
     padding: 50px; 
-    margin-left: 50px;
-    margin-right: 50px;
-  }
+    margin-left: 0px;
+    margin-right: 0px;
+  } */
+
 
 
   /* 
@@ -144,7 +172,25 @@ body {
     padding-right: 50px;
   }
   */
-
-  
-
 }
+
+
+
+/* 
+.search-bar {
+  display: flex;
+  margin-bottom: 0px;
+  height: 30px;
+  width: 87%;
+  max-width: 100%;
+  margin-left: 6.5%;
+  margin-top: 20px;
+  border-radius: 5px; 
+  background-color: #d5d5d5; 
+  border: none; 
+  padding-left: 20px;
+}
+*/
+
+
+

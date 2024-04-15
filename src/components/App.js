@@ -48,6 +48,10 @@ export default function App() {
                     />
                 </form>
             </div>
+            <div className="daily-picks-text">
+                <p>Daily Picks:</p>
+            </div>
+
             <div className="recipe-cards-wrapper">
                 {recipes.map(recipe => (
                     <a key={recipe.id} className="recipe-card" href={recipe.sourceUrl} target="_blank" rel="noopener noreferrer">
