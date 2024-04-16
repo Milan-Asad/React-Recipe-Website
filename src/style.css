@@ -7,7 +7,7 @@ body {
   margin: 0;
 }
 
-
+/* TOP NAV BAR */
 .header {
   display: flex;
   align-items: center;
@@ -21,12 +21,65 @@ body {
 .header--title {
   font-size: 1.25rem;
   margin-right: auto;
+  padding-left: 120px;
 }
 
 .header--project {
   font-size: 0.75rem;
   font-weight: 500;
 }
+
+
+/* BODY */
+
+.button-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 40%;
+
+}
+
+.button-italian {
+  
+  border: none;
+  border-radius: 100%;
+  background-color: #ff0000;
+  color: rgb(255, 255, 255);
+  padding: 0px;
+  font-family: 'Ginerin-Regular', sans-serif;
+  font-size: 10px;
+  width: 70px;
+  height: 60px;
+  margin-right: 20px; /* Add margin to create space between buttons */
+}
+
+.button-italian.selected {
+  background-color: #625757; /* Dark gray when button is selected */
+}
+
+
+.button-american {
+  border: none;
+  border-radius: 100%;
+  background-color: #ff0000;
+  color: rgb(255, 255, 255);
+  padding: 0px;
+  font-family: 'Ginerin-Regular', sans-serif;
+  font-size: 10px;
+  width: 70px;
+  height: 60px;
+  margin-right: 20px; /* Add margin to create space between buttons */
+}
+
+.button-american.selected {
+  background-color: #625757; /* Dark gray when button is selected */
+}
+
+
+
+
+
 
 .daily-picks-text {
   font-family: 'Ginerin-Regular', sans-serif;
@@ -51,7 +104,7 @@ body {
   padding-left: 130px;
   padding-right: 130px;
 
-  padding-top: 20px;
+  padding-top: 0px;
 }
 
 .recipe-card {
