@@ -6,6 +6,11 @@ export default function App() {
     const [searchQuery, setSearchQuery] = useState('');
     const [italianSelected, setItalianSelected] = useState(false); // State to track if Italian button is selected
     const [americanSelected, setAmericanSelected] = useState(false); // State to track if American button is selected
+    const [indianSelected, setIndianSelected] = useState(false); // State to track if American button is selected
+    const [thaiSelected, setThaiSelected] = useState(false); // State to track if American button is selected
+
+
+
     const [error, setError] = useState(null); // State to track API errors
 
     const apiKey = 'c54ba6b8202141d69cd028ce39a0e087';
@@ -41,6 +46,7 @@ export default function App() {
         }
     };
 
+    // 
     const handleNationalityClick = async (nationality) => {
         try {
             let url;
@@ -48,14 +54,38 @@ export default function App() {
                 url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${nationality}`;
                 setItalianSelected(true); // Toggle Italian button
                 setAmericanSelected(false); // Deselect American button if it's selected
+                setIndianSelected(false);
+                setThaiSelected(false);
             } else if (nationality === 'american' && !americanSelected) {
                 url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${nationality}`;
-                setAmericanSelected(true); // Toggle American button
-                setItalianSelected(false); // Deselect Italian button if it's selected
-            } else {
+                setAmericanSelected(true); 
+                setItalianSelected(false); 
+                setIndianSelected(false);
+                setThaiSelected(false);
+            } else if (nationality === 'indian' && !indianSelected) {
+                url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${nationality}`;
+                setIndianSelected(true);
+                setAmericanSelected(false); 
+                setItalianSelected(false); 
+                setThaiSelected(false);         
+                
+            } else if (nationality === 'thai' && !thaiSelected) {
+                url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${nationality}`;
+                setThaiSelected(true);    
+                setIndianSelected(false);
+                setAmericanSelected(false); 
+                setItalianSelected(false); 
+                     
+                
+            }
+            
+            else {
                 url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=5`;
                 setItalianSelected(false); // Deselect Italian button
                 setAmericanSelected(false); // Deselect American button
+                setIndianSelected(false);
+                setThaiSelected(false);         
+
             }
             const response = await fetch(url);
             const data = await response.json();
@@ -97,6 +127,19 @@ export default function App() {
     >
         AMERICAN
     </button>
+    <button
+        className={`button-indian${indianSelected ? ' selected' : ''}`} // Apply 'selected' class if American button is selected
+        onClick={() => handleNationalityClick('indian')}
+    >
+        INDIAN
+    </button>
+    <button
+        className={`button-thai${thaiSelected ? ' selected' : ''}`} // Apply 'selected' class if American button is selected
+        onClick={() => handleNationalityClick('thai')}
+    >
+        THAI
+    </button>
+    
 </div>
 
 
