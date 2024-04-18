@@ -4,10 +4,12 @@ import Header from './Header'; // Import Header component from the same director
 export default function App() {
     const [recipes, setRecipes] = useState([]); // Initialize with an empty array
     const [searchQuery, setSearchQuery] = useState('');
-    const [italianSelected, setItalianSelected] = useState(false); // State to track if Italian button is selected
-    const [americanSelected, setAmericanSelected] = useState(false); // State to track if American button is selected
-    const [indianSelected, setIndianSelected] = useState(false); // State to track if American button is selected
-    const [thaiSelected, setThaiSelected] = useState(false); // State to track if American button is selected
+    const [italianSelected, setItalianSelected] = useState(false); 
+    const [americanSelected, setAmericanSelected] = useState(false); 
+    const [indianSelected, setIndianSelected] = useState(false); 
+    const [thaiSelected, setThaiSelected] = useState(false); 
+    const [mexicanSelected, setMexicanSelected] = useState(false); 
+
 
 
 
@@ -46,28 +48,33 @@ export default function App() {
         }
     };
 
-    // 
+    // CATEGORIES
     const handleNationalityClick = async (nationality) => {
         try {
             let url;
             if (nationality === 'italian' && !italianSelected) {
                 url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${nationality}`;
-                setItalianSelected(true); // Toggle Italian button
-                setAmericanSelected(false); // Deselect American button if it's selected
+                setItalianSelected(true); 
+                setAmericanSelected(false); 
                 setIndianSelected(false);
                 setThaiSelected(false);
+                setMexicanSelected(false);
+
             } else if (nationality === 'american' && !americanSelected) {
                 url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${nationality}`;
                 setAmericanSelected(true); 
                 setItalianSelected(false); 
                 setIndianSelected(false);
                 setThaiSelected(false);
+                setMexicanSelected(false);
+
             } else if (nationality === 'indian' && !indianSelected) {
                 url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${nationality}`;
                 setIndianSelected(true);
                 setAmericanSelected(false); 
                 setItalianSelected(false); 
-                setThaiSelected(false);         
+                setThaiSelected(false);   
+                setMexicanSelected(false);      
                 
             } else if (nationality === 'thai' && !thaiSelected) {
                 url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${nationality}`;
@@ -75,16 +82,27 @@ export default function App() {
                 setIndianSelected(false);
                 setAmericanSelected(false); 
                 setItalianSelected(false); 
-                     
+                setMexicanSelected(false);
+
                 
+            } else if (nationality === 'mexican' && !mexicanSelected) {
+                url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${nationality}`;
+                setMexicanSelected(true);    
+                setIndianSelected(false);
+                setAmericanSelected(false); 
+                setItalianSelected(false); 
+                setThaiSelected(false);
+
             }
             
+            // ELSE IF DESELECTED
             else {
                 url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=5`;
-                setItalianSelected(false); // Deselect Italian button
-                setAmericanSelected(false); // Deselect American button
+                setItalianSelected(false); 
+                setAmericanSelected(false); 
                 setIndianSelected(false);
-                setThaiSelected(false);         
+                setThaiSelected(false);    
+                setMexicanSelected(false);     
 
             }
             const response = await fetch(url);
@@ -138,6 +156,12 @@ export default function App() {
         onClick={() => handleNationalityClick('thai')}
     >
         THAI
+    </button>
+    <button
+        className={`button-mexican${mexicanSelected ? ' selected' : ''}`} // Apply 'selected' class if American button is selected
+        onClick={() => handleNationalityClick('mexican')}
+    >
+        MEXICAN
     </button>
     
 </div>

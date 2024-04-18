@@ -115,6 +115,24 @@ body {
   background-color: #625757; /* Dark gray when button is selected */
 }
 
+.button-mexican {
+
+  border: none;
+  border-radius: 100%;
+  background-color: #ff0000;
+  color: rgb(255, 255, 255);
+  padding: 0px;
+  font-family: 'Ginerin-Regular', sans-serif;
+  font-size: 10px;
+  width: 70px;
+  height: 60px;
+  margin-right: 20px; /* Add margin to create space between buttons */
+}
+
+.button-mexican.selected {
+  background-color: #625757; /* Dark gray when button is selected */
+}
+
 
 
 
