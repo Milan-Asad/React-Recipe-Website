@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Header from './Header'; // Import Header component from the same directory
+import Header from './Header'; 
 
 export default function App() {
-    const [recipes, setRecipes] = useState([]); // Initialize with an empty array
+    const [recipes, setRecipes] = useState([]); 
     const [searchQuery, setSearchQuery] = useState('');
     const [italianSelected, setItalianSelected] = useState(false); 
     const [americanSelected, setAmericanSelected] = useState(false); 
@@ -134,31 +134,31 @@ export default function App() {
 
             <div className="button-container">
     <button
-        className={`button-italian${italianSelected ? ' selected' : ''}`} // Apply 'selected' class if Italian button is selected
+        className={`button-italian${italianSelected ? ' selected' : ''}`} 
         onClick={() => handleNationalityClick('italian')}
     >
         ITALIAN
     </button>
     <button
-        className={`button-american${americanSelected ? ' selected' : ''}`} // Apply 'selected' class if American button is selected
+        className={`button-american${americanSelected ? ' selected' : ''}`} 
         onClick={() => handleNationalityClick('american')}
     >
         AMERICAN
     </button>
     <button
-        className={`button-indian${indianSelected ? ' selected' : ''}`} // Apply 'selected' class if American button is selected
+        className={`button-indian${indianSelected ? ' selected' : ''}`}
         onClick={() => handleNationalityClick('indian')}
     >
         INDIAN
     </button>
     <button
-        className={`button-thai${thaiSelected ? ' selected' : ''}`} // Apply 'selected' class if American button is selected
+        className={`button-thai${thaiSelected ? ' selected' : ''}`} 
         onClick={() => handleNationalityClick('thai')}
     >
         THAI
     </button>
     <button
-        className={`button-mexican${mexicanSelected ? ' selected' : ''}`} // Apply 'selected' class if American button is selected
+        className={`button-mexican${mexicanSelected ? ' selected' : ''}`} 
         onClick={() => handleNationalityClick('mexican')}
     >
         MEXICAN
