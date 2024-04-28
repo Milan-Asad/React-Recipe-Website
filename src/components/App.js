@@ -13,7 +13,7 @@ export default function App() {
 
 
 
-    const [error, setError] = useState(null); // State to track API errors
+    const [error, setError] = useState(null); 
 
     const apiKey = 'c54ba6b8202141d69cd028ce39a0e087';
 
